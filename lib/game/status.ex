@@ -11,7 +11,7 @@ defmodule ExMon.Game.Status do
     IO.puts("------------------------")
   end
 
-  def print_round_message(%{status: :game_over}= info) do
+  def print_round_message(%{status: :game_over} = info) do
     IO.puts("\n==== The Game is Over====\n")
     IO.inspect(info)
     IO.puts("------------------------")
@@ -32,5 +32,4 @@ defmodule ExMon.Game.Status do
   def print_heal_message(player, :heal, life) do
     IO.puts("\n==== The #{player} healed itself to #{life} points ====\n")
   end
-
 end

@@ -24,6 +24,7 @@ defmodule ExMon do
   end
 
   defp handle_status(:game_over, _move), do: Status.print_round_message(Game.info())
+
   defp handle_status(_other, move) do
     move
     |> Actions.fetch_move()
@@ -32,14 +33,14 @@ defmodule ExMon do
     computer_move(Game.info())
   end
 
-
-
   defp do_move({:error, move}), do: Status.print_wrong_move_message(move)
+
   defp do_move({:ok, move}) do
     case move do
       :move_heal -> Actions.heal()
       move -> Actions.attack(move)
     end
+
     Status.print_round_message(Game.info())
   end
 

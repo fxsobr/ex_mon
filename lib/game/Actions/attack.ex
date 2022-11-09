@@ -2,7 +2,6 @@ defmodule ExMon.Game.Actions.Attack do
   alias ExMon.Game
   alias ExMon.Game.Status
 
-
   @move_average_power 18..25
   @move_random_power 10..35
 

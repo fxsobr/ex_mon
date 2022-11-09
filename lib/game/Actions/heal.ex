@@ -4,7 +4,6 @@ defmodule ExMon.Game.Actions.Heal do
 
   @heal_power 18..25
 
-
   def self_heal(player) do
     player
     |> Game.fetch_player()
@@ -17,7 +16,6 @@ defmodule ExMon.Game.Actions.Heal do
 
   defp set_life(life, player) when life > 100, do: update_player_life(player, 100)
   defp set_life(life, player), do: update_player_life(player, life)
-
 
   defp update_player_life(player, life) do
     player
@@ -32,6 +30,5 @@ defmodule ExMon.Game.Actions.Heal do
     |> Game.update()
 
     Status.print_heal_message(player, :heal, life)
-
   end
 end
